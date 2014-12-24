@@ -1,0 +1,40 @@
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 box">
+	<div class="media-wrapper">
+		<div class="media">
+			<div class="media-object media-image pull-left">
+				<img src="{{ book.image }}" class="img" datasrc="holder.js/64x64">
+			</div>
+
+			<div class="media-body">
+				<h3>{{ book.title }}</h3>
+				<small timeago title="{{book.added}}" class="text-muted">{{book.added}}</small>
+				<p>
+					{{ book.summary }}
+				</p>
+				<span><strong>Author:</strong> {{ book.author }}</span>
+				<span><strong>Publisher:</strong> {{ book.publisher }}</span>
+				<span><strong>Publish Year:</strong> {{ book.year }}</span>
+				<span class="mgb-7"><strong>Category:</strong> {{ book.category }}</span>
+				<div class="price-box" ng-show="book.price > 0.00">
+					<span class="disc-price">{{ book.discountedprice | currency}}</span>
+					<span class="orig-price" ng-if="book.discount > 0.00"><strike>{{ book.price | currency }}</strike></span>
+					<span class="n2-btn text-center">Buy</span>
+				</div>
+				<div class="free-box" ng-show="book.price == 0.00">
+					<span class="n2-btn text-center">download</span>
+				</div>
+			</div>
+		</div>
+		<div class="media-footer clearfix" ng-controller="BookRatingController">
+			<div class="ratings-box pull-left" ng-init="rating = star.rating + 1">
+				<div class="rater" star-rating rating-value="rating" max="5" 
+					on-rating-selected="rate(rating)" ></div>
+				<span class="text-center">{{selected}}</span>
+			</div>
+			<div class="overall-ratings pull-right">
+				average
+				<span class="text-center">{{ book.average }}</span>
+			</div>
+		</div>
+	</div>
+</div>

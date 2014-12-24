@@ -1,0 +1,24 @@
+
+
+
+<div class="container books-page">
+  <div class="book row" ng-repeat="book in books">
+    <div class="col-xs-1">
+    </div>
+    <div class="col-md-9 col-xs-11">
+
+      <div class="info">
+        <p>
+          {{ book.title }}
+        </p>
+        <span class="description">{{ book.description }}</span>
+      </div>
+      <div>
+        <span>submitted by <a ng-href="#/users/{{ book.creatorUID }}">{{ book.creator }}</a></span>
+        &mdash;
+        <a ng-href="#/books/{{ book.$id }}">comments</a>
+        <a ng-click="deleteBook(book)">delete</a>
+      </div>
+    </div>
+  </div>
+</div>

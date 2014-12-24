@@ -1,0 +1,39 @@
+<div class="booklife-zone">
+	<div class="col-lg-9 col-md-9 col-sm-6 col-xs-12">
+		<div class="well packagebox clearfix">
+			<books books="vm.books" ng-show="vm.books && vm.books.length"></books>
+		</div>
+	</div>
+	<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+		<div class="well packagebox" ng-show="vm.category">
+			<div class="sidebar">
+				<h2>Category</h2>
+				<div class="category-box">
+					<span>Health</span>
+					<span>Family</span>
+					<span>Medicine</span>
+					<span>Finance</span>
+					<span>Economics</span>
+					<span class="active">Kids</span>
+					<span>Fiction</span>
+					<span>Religion</span>
+					<span>Technology</span>
+					<span>Education</span>
+					<span>Politics</span>
+					<span>Entertainment</span>
+					<span>Sports</span>
+					<span>Literature</span>
+					<span>Science</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- a class="btn btn-primary btn-fab btn-raised mdi-content-add btn-add-new-post"
+href="javascript:void(0)"
+ng-hide="vm.isAuthenticated"
+ng-dialog="/static/templates/posts/new-post.html"
+ng-dialog-controller="NewPostController as vm"></a -->
