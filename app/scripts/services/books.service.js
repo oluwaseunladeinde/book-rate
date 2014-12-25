@@ -4,7 +4,7 @@ app.factory('Book', function ($firebase, FIREBASE_URL) {
   var ref = new Firebase(FIREBASE_URL);
   var books = $firebase(ref.child('books')).$asArray();
   var categories = $firebase(ref.child('categories')).$asArray();
-
+  
   var Book = {
     all: books,
     categories : categories,
@@ -19,6 +19,9 @@ app.factory('Book', function ($firebase, FIREBASE_URL) {
     },
     createCategory: function(category){
       return categories.$add(category);
+    },
+    removeCategory: function(category){
+      return categories.$remove(category);
     }
   };
 

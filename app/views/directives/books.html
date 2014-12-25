@@ -1,15 +1,12 @@
-<div class="row books-box" ng-cloak>
-	<div class="row-column" ng-repeat="columns in vm.columns">
-		<div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
-			<div ng-repeat="column in columns">
-				<book book="column"></book>
-			</div>
-		</div>
+<div class="" ng-cloak>
+	<div masonry load-images="false">
+	    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 masonry-brick" ng-repeat="book in vm.books">
+	    	<book book="book"></book>
+	    </div>
 	</div>
-
-	<div ng-hide="vm.columns && vm.columns.length">
+	<div ng-hide="vm.books && vm.books.length">
 		<div class="col-sm-12 no-posts-here">
-			<em>There are no books here. <a href="/add/book/">Add one now.</a></em>
+			<em>There are no books here. <span>Add one now.</span></em>
 		</div>
 	</div>
 </div>

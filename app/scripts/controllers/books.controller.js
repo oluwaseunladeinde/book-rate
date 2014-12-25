@@ -81,7 +81,7 @@ app.controller('BooksController', function ($scope) {
 	 * @memberOf BooksController
 	 */
 	function render(current, original) {
-		if (current !== original) {
+		/**if (current !== original) {
 			vm.columns = [];
 			for (var i = 0; i < calculateNumberOfColumns(); ++i) {
 				vm.columns.push([]);
@@ -91,6 +91,7 @@ app.controller('BooksController', function ($scope) {
 				var column = approximateShortestColumn();
 				vm.columns[column].push(current[k]);
 			}	
-		}
+		}*/
+		vm.books = $scope.books;
 	}
 });

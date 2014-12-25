@@ -32,12 +32,12 @@ app.directive('book', function(){
 app.directive('starRating', function(){
 	
 	var directive = {
-	    restrict : "A",
+	    restrict : 'A',
 	    templateUrl : '/views/directives/ratings.html',
 	    scope : {
-	      ratingValue : "=",
-	      max : "=",
-	      onRatingSelected : "&"
+	      ratingValue : '=',
+	      max : '=',
+	      onRatingSelected : '&'
 	    },
 	    link : function(scope, elem, attrs) {
 	      var updateStars = function() {
@@ -54,7 +54,7 @@ app.directive('starRating', function(){
 	          rating : index + 1
 	        });
 	      };
-	      scope.$watch("ratingValue", function(oldVal, newVal) {
+	      scope.$watch('ratingValue', function(oldVal, newVal) {
 	        if (newVal) { updateStars(); }
 	      });
     	}
@@ -71,7 +71,7 @@ app.directive('timeago', function($timeout, $log){
 	    },
 	    link: function (scope, elem, attrs) {
 	        attrs.title = new Date(attrs.title*1000);
-	        console.log("title ", attrs.title);
+	        console.log('title ', moment(attrs.title).format('X'));
 	        var updateTime = function () {
 	            if (attrs.title) {
 	                elem.text(moment(new Date(attrs.title)).fromNow());

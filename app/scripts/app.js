@@ -19,7 +19,8 @@ var app = angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'firebase'
+    'firebase',
+    'wu.masonry'
   ])
   .config(function ($routeProvider) {
     $routeProvider

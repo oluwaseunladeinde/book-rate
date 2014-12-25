@@ -6,32 +6,21 @@ app.controller('BookRatingController', function ($scope, FIREBASE_URL) {
   
   $scope.rating = 5;
   $scope.selected = 1;
+  $scope.trans = {};
  
   $scope.rate = function(rating) {
     $scope.selected = rating;
     $scope.item.child('count').transaction(function(currentVal) {
-       return (currentVal||0)+1;
+    	var val = (currentVal||0)+1;
+    	$scope.trans["count"] = val;
+       return val;
     });
-
     $scope.item.child('rating').transaction(function(currentVal) {
-       return (currentVal||0)+ parseInt(rating);
+    	var val = (currentVal||0)+ parseInt(rating);
+    	$scope.trans["rating"] = val;
+
+       return val;
     });
-
-    $scope.item.update({'average': Math.round($scope.book.rating / $scope.book.count)});
-
-    discountedprice();
+    $scope.item.update({'average': Math.round($scope.trans["rating"] / $scope.trans["count"])});
   };
-
-  $scope.edit = function(){
-  	
-  };
-
-  function discountedprice(){
-    if($scope.book.price > 0 && $scope.book.discount > 0 ){
-      $scope.book.discountedprice = $scope.book.price - (($scope.book.discount/ 100) * $scope.book.price);
-    }
-    else if($scope.book.price > 0 && $scope.book.discount == 0 ){
-      $scope.book.discountedprice = $scope.book.price;
-    }
-  }
 });
