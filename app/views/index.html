@@ -58,7 +58,7 @@ ng-dialog-controller="NewPostController as vm"></a -->
 			</div>
 			<div class="col-lg-9 col-md-9 col-sm-6 col-xs-12">
 				<div class="category-box">
-					<div ng-repeat="cat in categories | filter: { default: true }" class="dic-cat">
+					<div ng-repeat="cat in categories | filter: { default: true }" class="dic-cat" ng-click="filter(cat)">
 						<span class="pull-left">{{ cat.name}}</span>
 						<i ng-click="removeCategory(cat)" ng-hide="cat.default" class="pull-right fa fa-times"></i>
 					</div>
