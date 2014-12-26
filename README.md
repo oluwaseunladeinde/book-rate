@@ -7,11 +7,21 @@ This app is a simple implementation of the FAN stack (Firebase, Angularjs and No
 
 The feature list is outlined below.
 
-Featues Include
-===============
+Featues Completed Include
+-------------------------
 
-. Adding a book
-. Deleting a book
-. Rating a book
-. Creating Book Category
-. Removing/Deleting Book Category
+  Adding a book
+  Rating a book
+  Creating Book Category
+  Removing/Deleting Book Category
+  
+  Featues In the Works Include
+-------------------------
+
+  Adding Users & Authentication
+  Form Validation
+  Firebase Security & Rules
+  Filtering books by Category
+  Editing and Deleting Books (created by the user only)
+  
+  
