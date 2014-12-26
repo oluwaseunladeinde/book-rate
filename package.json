@@ -1,7 +1,13 @@
 {
   "name": "bookrate",
-  "version": "0.0.0",
-  "dependencies": {},
+  "version": "0.0.1",
+  "description": "A simple book rating application built with the FAN (Firebase, Angularjs and Nodejs) Stack.",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.10.6",
+    "cool-ascii-faces": "~1.3.x",
+    "bower": "1.3.x"
+  },
   "devDependencies": {
     "grunt": "^0.4.1",
     "grunt-autoprefixer": "^0.7.3",
@@ -31,6 +37,8 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "start": "node index.js",
+    "postinstall": "./node_modules/bower/bin/bower install"
   }
 }

@@ -3,7 +3,6 @@
 app.controller('AuthController', function ($scope, $location, Auth, user) {
   
   //$scope.user = user;
-
   if (user && Auth.signedIn()) {
     $location.path('/');
   }

@@ -22,7 +22,7 @@ var app = angular
     'firebase',
     'wu.masonry'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/index.html',
@@ -57,5 +57,9 @@ var app = angular
       .otherwise({
         redirectTo: '/'
       });
+
+    // enable html5Mode for pushstate ('#'-less URLs)
+    $locationProvider.html5Mode(true);
+    $locationProvider.hashPrefix('!');
   })
   .constant('FIREBASE_URL', 'https://resplendent-torch-4811.firebaseio.com/');

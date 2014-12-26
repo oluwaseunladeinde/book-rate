@@ -71,7 +71,7 @@ app.directive('timeago', function($timeout, $log){
 	    },
 	    link: function (scope, elem, attrs) {
 	        attrs.title = new Date(attrs.title*1000);
-	        console.log('title ', moment(attrs.title).format('X'));
+	        //console.log('title ', moment(attrs.title).format('X'));
 	        var updateTime = function () {
 	            if (attrs.title) {
 	                elem.text(moment(new Date(attrs.title)).fromNow());

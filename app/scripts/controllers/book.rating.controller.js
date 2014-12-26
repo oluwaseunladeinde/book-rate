@@ -2,7 +2,8 @@
 
 app.controller('BookRatingController', function ($scope, FIREBASE_URL) {
   var ref = new Firebase(FIREBASE_URL);
-  $scope.item = ref.child('books').child($scope.$parent.book.$id);
+
+  $scope.item = ref.child('data/books').child($scope.book.$id);
   
   $scope.rating = 5;
   $scope.selected = 1;
